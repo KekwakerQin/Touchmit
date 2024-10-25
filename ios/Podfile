@@ -1,0 +1,23 @@
+# Устанавливаем платформу iOS для всего проекта
+platform :ios, '15.0'
+
+target 'Touchmit' do
+  # Используем динамические фреймворки
+  use_frameworks!
+
+  # Добавляем зависимости Firebase для основного target
+  pod 'Firebase/Firestore'       # Для работы с Firestore
+  pod 'Firebase/Auth'            # Для аутентификации
+  pod 'Firebase/Analytics'       # Для аналитики (опционально)
+  # Добавь другие зависимости Firebase, если нужно
+
+  target 'TouchmitTests' do
+    inherit! :search_paths
+    # Pods для тестирования (можно добавить тестовые зависимости, если нужно)
+  end
+
+  target 'TouchmitUITests' do
+    # Pods для UI-тестирования
+  end
+
+end
